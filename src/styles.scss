@@ -1,0 +1,22 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* esconder a barra de rolagem em navegadores */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE e Edge antigos */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari e Edge */
+}
+
+body {
+    margin: 0;
+}
+
+.section {
+  background-color: #0b1120; //estilos pra todas sections
+}

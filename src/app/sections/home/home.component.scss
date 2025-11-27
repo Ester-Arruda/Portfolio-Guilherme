@@ -1,0 +1,126 @@
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 0 10%;
+  background: radial-gradient(circle at 30% 50%, #1a1a2e 0%, #0b1120 100%);
+  color: #fff;
+
+  @media (max-width: 900px) {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+}
+
+.home-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.greeting {
+  font-size: 1.5rem;
+  color: #ff6b6b;
+  margin-bottom: 0.5rem;
+
+  .dot {
+    color: #ff6b6b;
+  }
+}
+
+.name {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+
+  span {
+    color: #ffffff;
+  }
+
+  @media (max-width: 900px) {
+    font-size: 2.2rem;
+  }
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #b0b0b0;
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+
+  @media (max-width: 900px) {
+    justify-content: center;
+  }
+
+  .btn {
+    padding: 0.8rem 1.8rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+
+    &.primary {
+      background: #ff6b6b;
+      color: #fff;
+
+      &:hover {
+        background: #ff4b4b;
+      }
+    }
+
+    &.secondary {
+      border: 2px solid #ff6b6b;
+      color: #ff6b6b;
+
+      &:hover {
+        background: #ff6b6b;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.home-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .photo-wrapper {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 2;
+
+    img {
+      width: 100%;
+      border-radius: 50%;
+      position: relative;
+      z-index: 3;
+    }
+
+    .photo-glow {
+      position: absolute;
+      top: -15%;
+      left: -15%;
+      width: 130%;
+      height: 130%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 107, 107, 0.3), transparent 70%);
+      z-index: 1;
+      filter: blur(40px);
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<section class="projects-section" id="projects">
+  <h2 class="section-title">Projetos</h2>
+
+  <div class="projects-container">
+    <div class="project-card" *ngFor="let project of projects">
+      <h3>{{ project.title }}</h3>
+      <p class="description">{{ project.description }}</p>
+
+      <div class="carousel">
+        <div class="carousel-wrapper">
+          <div
+            *ngFor="let slide of getSlides(project.key); let i = index; trackBy: trackByIndex"
+            class="carousel-slide"
+            [class.active]="i === currentIndex[project.key]"
+          >
+            <img [src]="slide" [alt]="project.title" />
+          </div>
+        </div>
+
+        <button class="carousel-btn prev" (click)="prevSlide(project.key)">&#10094;</button>
+        <button class="carousel-btn next" (click)="nextSlide(project.key)">&#10095;</button>
+
+        <div class="carousel-dots">
+          <span
+            *ngFor="let slide of getSlides(project.key); let i = index"
+            class="dot"
+            [class.active]="i === currentIndex[project.key]"
+            (click)="goToSlide(project.key, i)"
+          ></span>
+        </div>
+      </div>
+
+      <div class="techs">
+        <span *ngFor="let tech of project.techs" class="tech">{{ tech }}</span>
+      </div>
+
+      <a [href]="project.github" class="github-link" target="_blank">
+        <i class="fa-brands fa-github"></i> Ver no GitHub
+      </a>
+    </div>
+  </div>
+</section>

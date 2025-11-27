@@ -1,0 +1,28 @@
+<mat-toolbar color="primary" class="header-toolbar">
+        <nav>
+                <button mat-button 
+                        [class.active]="activeSection === 'home'" 
+                        (click)="scrollTo('home')">Início
+                </button>
+
+                <button mat-button 
+                        [class.active]="activeSection === 'about'" 
+                        (click)="scrollTo('about')">Sobre
+                </button>
+
+                <button mat-button 
+                        [class.active]="activeSection === 'experience'" 
+                        (click)="scrollTo('experience')">Experiências
+                </button>
+
+                <button mat-button 
+                        [class.active]="activeSection === 'projects'" 
+                        (click)="scrollTo('projects')">Projetos
+                </button>
+
+                <button mat-button 
+                        [class.active]="activeSection === 'contact'" 
+                        (click)="scrollTo('contact')">Contato
+                </button>
+        </nav>
+</mat-toolbar>
